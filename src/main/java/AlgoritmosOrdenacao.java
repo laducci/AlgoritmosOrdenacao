@@ -1,5 +1,3 @@
-package src.main.java;
-
 public class AlgoritmosOrdenacao {
 
     // array que vai armazenar os elementos a serem ordenados
