@@ -1,6 +1,6 @@
 package controller;
 
-public class ResultadoOrdenacao {
+public class ResultadoOrdenacao { // classe para ajudar com os results q vamos precisar
     private String nomeAlgoritmo;
     private long tempoExecucao;
     private boolean ordenadoCorretamente;

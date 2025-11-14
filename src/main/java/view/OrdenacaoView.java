@@ -8,10 +8,11 @@ import java.util.Scanner;
 
 public class OrdenacaoView {
     
+    // metodo pra ler o arquivo e retornar um array de inteiros
     public int[] lerArquivo(String caminhoArquivo) throws FileNotFoundException {
         File arquivo = new File(caminhoArquivo);
         
-        // Primeiro, conta quantos números existem no arquivo
+        // primeiro conta quantos números existem no arquivo
         Scanner contador = new Scanner(arquivo);
         int tamanho = 0;
         while (contador.hasNextInt()) {
@@ -20,12 +21,12 @@ public class OrdenacaoView {
         }
         contador.close();
         
-        // Agora que sabe o tamanho, cria o array e lê os números
+        // agora que contou, sabe o tamanho q o arr deve ter, e le os numeros pro array
         int[] listaNumeros = new int[tamanho];
         Scanner leitor = new Scanner(arquivo);
         int i = 0;
-        while (leitor.hasNextInt() && i < tamanho) {
-            listaNumeros[i] = leitor.nextInt();
+        while (leitor.hasNextInt() && i < tamanho) { // enquanto tiver numero e o array n tiver cheio, ele vai lendo e colocando no array
+            listaNumeros[i] = leitor.nextInt(); 
             i++;
         }
         leitor.close();
@@ -33,11 +34,12 @@ public class OrdenacaoView {
         return listaNumeros;
     }
     
-    public void exibirInicio(String nomeArquivo) {
+    public void exibirInicio(String nomeArquivo) { 
         System.out.println("Abrindo o arquivo: " + nomeArquivo);
     }
     
-    public void exibirResultados(ResultadoOrdenacao[] resultados) {
+    // estrutura os resultados q qremos exibir
+    public void exibirResultados(ResultadoOrdenacao[] resultados) { 
         for (int i = 0; i < resultados.length; i++) {
             System.out.println(resultados[i].getNomeAlgoritmo() + ":");
             System.out.println("Tempo: " + resultados[i].getTempoExecucao() + " ns");

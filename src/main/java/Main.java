@@ -24,16 +24,16 @@ public class Main {
         };
 
         for (String nomeArquivo : arquivos) {
-            view.exibirInicio(nomeArquivo);
+            view.exibirInicio(nomeArquivo); // usa o metodo do view pra exibir o arq q ta sendo lido
 
             try {
-                // Lê os dados do arquivo
+                // le os dados do arq csv e armazena no array
                 int[] listaNumeros = view.lerArquivo("src/main/resources/" + nomeArquivo);
                 
-                // Executa todos os algoritmos
+                // executa todos os algoritmos levando em consideracao o array q foi armazenado ali em cima
                 ResultadoOrdenacao[] resultados = controller.executarTodosAlgoritmos(listaNumeros);
                 
-                // Exibe os resultados
+                // exibe os resultados
                 view.exibirResultados(resultados);
 
             } catch (FileNotFoundException e) {
